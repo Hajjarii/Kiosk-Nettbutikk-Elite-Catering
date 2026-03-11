@@ -13,3 +13,8 @@ Rasberry PI (hosting)
 Github (versjonskontroll)
 
 
+Uke 11:
+- Har satt opp github repository
+- Laget mappestruktur i VSC
+- Har begynt på å koble flask til mariadb
+- Begynt på styling av nettside 
