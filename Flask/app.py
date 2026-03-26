@@ -3,10 +3,9 @@ import pymysql
 
 app = Flask(__name__)
 
-# Database-innstillinger
-DB_HOST = '10.2.0.74'
+DB_HOST = '10.2.3.139'
 DB_USER = 'kioskbruker'
-DB_PASSWORD = '123123'  # Passordet du lagde i Del 3A
+DB_PASSWORD = '123123'
 DB_NAME = 'kiosk'
 
 def koble_til_db():

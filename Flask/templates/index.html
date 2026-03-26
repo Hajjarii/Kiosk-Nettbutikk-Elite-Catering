@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Catering Kiosk</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <img src="../static/images/EliteCateringAS_Transparrent.png" alt="Elite Catering logo" class="logo">
+        <span class="navbar-tittel">Bestill fra nettet og hent</span>
+    </nav>
+
+    <div class="innhold">
+
+        <div class="varmmat">
+            <h2>🍽️ Dagens varmmat</h2>
+            <div class="varmmat-kort">
+                <p class="varmmat-navn">Kommer snart...</p>
+                <p class="varmmat-beskrivelse">Bilde og informasjon legges til senere.</p>
+            </div>
+        </div>
+
+        <div class="produkter">
+            <h2>🛒 Kjøp varer</h2>
+            <table class="produkt-tabell">
+                <tr>
+                    <th>Navn</th>
+                    <th>Pris</th>
+                    <th>Beskrivelse</th>
+                    <th>Lager</th>
+                    <th></th>
+                </tr>
+                {% for produkt in produkter %}
+                <tr>
+                    <td>{{ produkt[1] }}</td>
+                    <td>{{ produkt[2] }} kr</td>
+                    <td>{{ produkt[3] }}</td>
+                    <td>{{ produkt[4] }}</td>
+                    <td><button>Legg i handlekurv</button></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
