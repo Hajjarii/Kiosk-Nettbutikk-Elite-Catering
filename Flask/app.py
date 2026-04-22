@@ -9,7 +9,7 @@ def hjem():
         with mariadb.connect(
             user="kioskbruker",
             password="123123",
-            host="10.2.3.139",
+            host="localhost",
             port=3306,
             database="kiosk") as conn:
 
