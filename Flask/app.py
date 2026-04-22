@@ -1,30 +1,27 @@
 from flask import Flask, render_template
-import pymysql
+import mariadb
 
 app = Flask(__name__)
 
-DB_HOST = '10.2.3.139'
-DB_USER = 'kioskbruker'
-DB_PASSWORD = '123123'
-DB_NAME = 'kiosk'
-
-def koble_til_db():
-    return pymysql.connect(
-        host=DB_HOST,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        database=DB_NAME
-    )
-
 @app.route('/')
 def hjem():
-    db = koble_til_db()
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM produkter")
-    produkter = cursor.fetchall()
-    cursor.close()
-    db.close()
-    return render_template('index.html', produkter=produkter)
+    try:
+        with mariadb.connect(
+            user="kioskbruker",
+            password="123123",
+            host="10.2.3.139",
+            port=3306,
+            database="kiosk") as conn:
+
+            mycursor = conn.cursor()
+            mycursor.execute("SELECT * FROM produkter")
+            produkter = mycursor.fetchall()
+
+            return render_template('index.html', produkter=produkter)
+
+    except mariadb.Error as e:
+        print(f"Error connecting to MariaDB: {e}")
+        return "Kunne ikke koble til databasen", 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
