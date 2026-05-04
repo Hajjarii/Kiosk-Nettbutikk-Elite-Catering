@@ -9,11 +9,11 @@ app = Flask(__name__)
 def hjem():
     try:
         with mariadb.connect(
-        user="DB_USER",
-            password="DB_PASSWORD",
+        user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
             host="localhost",
             port=3306,
-            database="DB_NAME") as conn:
+            database=os.getenv("DB_NAME")) as conn:
 
             mycursor = conn.cursor()
             mycursor.execute("SELECT * FROM produkter")
