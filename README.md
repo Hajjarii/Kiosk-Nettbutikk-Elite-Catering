@@ -28,3 +28,21 @@ Lag en environment:
 2. source .venv/bin/activate
 
 Så er alt klart, serveren hostes på hosten sin IP-addresse
+
+
+
+
+
+
+
+
+
+
+DOKUMENTASJON:
+Eksamen dokumentasjon
+
+  1. Jeg startet med å sette opp github repository med kanban board for å enkelt holde styr på hva jeg gjør og skal gjøre.
+  2. Deretter begynnte jeg på mariadb med å sette opp database med verdier i en produkt tabell. Jeg sattet opp flask server imens så arbeidet synkroniserte seg med flask.
+  3. Det var litt problemer med pushing til github så jeg brukte AI til å hjelpe.
+     Det var også noen problemer med hosting av flask serveren fordi det var en feilmelding i koden, funksjonen "def hjem()" hadde ikke noe return_template, så den viste ikke hva den skulle vise. Fikset med å skrive det på slutten av funksjonen. (Brukte ai hjelp til å finne feilen)
+4. Stylet nettsiden litt.
